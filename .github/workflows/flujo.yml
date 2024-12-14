@@ -1,0 +1,38 @@
+name: Revision-taller
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tarea1-construir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener código
+        uses: actions/checkout@v3
+
+      - name: Hacer gradlew ejecutable
+        run: chmod u+x gradlew
+
+      - name: Construir con Gradle
+        run: ./gradlew build -x test check
+
+  tarea2-verificar:
+    runs-on: ubuntu-latest
+    needs: tarea1-construir
+    steps:
+      - name: Obtener código
+        uses: actions/checkout@v3
+
+      - name: Ejecutar Gradle Check
+        run: ./gradlew check
+
+  tarea3-probar:
+    runs-on: ubuntu-latest
+    needs: tarea2-verificar
+    steps:
+      - name: Obtener código
+        uses: actions/checkout@v3
+
+      - name: Ejecutar pruebas con Gradle
+        run: ./gradlew test
