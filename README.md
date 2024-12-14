@@ -1,7 +1,5 @@
-# Plantilla talleres programación funcional
+# TALLER 3 PFC
 
-## Reglas
+## PROGRAMACION CONCURRENTE
 
-- Sólo modificar lo indicado por el docente
-- Debe agregar las pruebas de software solicitadas en el docente
-- El informe en formato PDF debe estar en la raiz del proyecto
+- Sebastian Ceron Orozco - 2266148
